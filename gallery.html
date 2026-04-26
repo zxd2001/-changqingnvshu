@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="brand_title_gallery">字符展览 · changqingnvshu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="logo/51eb5cf89d91a5686490c070c5e32028.jpg" alt="changqingnvshu" data-i18n-alt="brand_name" class="logo-img">
+        <span data-i18n="brand_name">changqingnvshu</span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">首页</a>
+        <a href="convert.html" class="nav-link" data-i18n="nav_convert">语言转换</a>
+        <a href="gallery.html" class="nav-link active" data-i18n="nav_gallery">字符展览</a>
+        <a href="courses.html" class="nav-link" data-i18n="nav_courses">传承人课程</a>
+        <a href="practice.html" class="nav-link" data-i18n="nav_practice">每日一练</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container page-hero-content">
+      <div class="section-tag" data-i18n="nav_gallery">字符展览</div>
+      <h1><span data-i18n="brand_name">changqingnvshu</span> · <span class="nushu-char nushu-global">396</span><span data-i18n="gallery_chars">字符</span></h1>
+      <p data-i18n="gallery_desc">396个女书字符，每一个都是一段历史。点击字符翻转卡片，查看对应的汉字与释义。</p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="gallery-controls">
+        <div>
+          <h2 style="font-size: 1.3rem; margin-bottom: 4px;" data-i18n="gallery_title">女书字符表</h2>
+          <p style="font-size: 0.875rem; color: var(--text-light);">共 <span id="charCount">396</span> <span data-i18n="gallery_chars">个字符</span></p>
+        </div>
+        <div class="search-box">
+          <span class="search-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </span>
+          <input type="text" id="searchInput" data-i18n-placeholder="gallery_search_placeholder" placeholder="搜索汉字，如：女">
+        </div>
+      </div>
+
+      <div class="char-grid" id="charGrid"></div>
+    </div>
+  </section>
+
+  <!-- Legend -->
+  <section style="padding: 0 0 80px; background: white;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 0;">
+        <div style="padding: 28px; background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border);">
+          <h3 style="font-size: 1.05rem; margin-bottom: 12px;" data-i18n="gallery_flip_title">翻转卡片说明</h3>
+          <p style="font-size: 0.875rem; color: var(--text-light); line-height: 1.8;" data-i18n="gallery_flip_desc">每个女书字符如同一个小牌子。正面（浅色）是女书字符本身，点击后可翻转看到背面（青色）显示对应的汉字。如果一个汉字对应多个女书字符，则优先显示第一个。</p>
+        </div>
+        <div style="padding: 28px; background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border);">
+          <h3 style="font-size: 1.05rem; margin-bottom: 12px;" data-i18n="gallery_source_title">字符来源</h3>
+          <p style="font-size: 0.875rem; color: var(--text-light); line-height: 1.8;" data-i18n="gallery_source_desc">本展览收录全部396个女书字符，数据来源于江永女书对照表。字符按照Unicode女书区（U+1B200–U+1B2FF）标准编码，支持在现代浏览器中直接显示。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="logo/51eb5cf89d91a5686490c070c5e32028.jpg" alt="changqingnvshu" data-i18n-alt="brand_name" class="footer-logo-img"><span data-i18n="brand_name">changqingnvshu</span></a>
+        <p data-i18n="footer_desc">传承江永女书文化，让世界看见女性文字的独特魅力。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_explore">探索</h4>
+        <ul>
+          <li><a href="convert.html" data-i18n="nav_convert">语言转换</a></li>
+          <li><a href="gallery.html" data-i18n="nav_gallery">字符展览</a></li>
+          <li><a href="courses.html" data-i18n="nav_courses">传承人课程</a></li>
+          <li><a href="practice.html" data-i18n="nav_practice">每日一练</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_about">关于</h4>
+        <ul><li><a href="index.html#about" data-i18n="footer_about_link">女书简介</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_contact">联系</h4>
+        <ul><li><a href="#" data-i18n="footer_coop_link">合作咨询</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><span data-i18n="footer_copyright">© 2026 常青女书 · NUSHU · 江永女书文化传播平台 · 仅供学习与文化传播使用</span></div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Gallery page i18n
+    Object.assign(I18N.zh, {
+      gallery_chars: '个字符', gallery_desc: '396个女书字符，每一个都是一段历史。点击字符翻转卡片，查看对应的汉字与释义。',
+      gallery_title: '女书字符表', gallery_flip_title: '翻转卡片说明',
+      gallery_flip_desc: '每个女书字符如同一个小牌子。正面（浅色）是女书字符本身，点击后可翻转看到背面（青色）显示对应的汉字。如果一个汉字对应多个女书字符，则优先显示第一个。',
+      gallery_source_title: '字符来源',
+      gallery_source_desc: '本展览收录全部396个女书字符，数据来源于江永女书对照表。字符按照Unicode女书区（U+1B200–U+1B2FF）标准编码，支持在现代浏览器中直接显示。',
+      gallery_search_placeholder: '搜索汉字，如：女',
+      gallery_empty: '未找到匹配的女书字符',
+    });
+    Object.assign(I18N.en, {
+      gallery_chars: ' characters', gallery_desc: '396 Nüshu characters — each one is a piece of history. Click any card to flip it and see the corresponding Chinese character.',
+      gallery_title: 'Nüshu Character Table', gallery_flip_title: 'How to Use',
+      gallery_flip_desc: 'Each Nüshu character is displayed like a tile. The front (light) shows the Nüshu character itself; click to flip and see the corresponding Chinese character on the back (teal).',
+      gallery_source_title: 'Data Source',
+      gallery_source_desc: 'This exhibition covers all 396 Nüshu characters, sourced from the Jiangyong Nüshu reference table. Characters are encoded in Unicode Nüshu block (U+1B200–U+1B2FF) and display directly in modern browsers.',
+      gallery_search_placeholder: 'Search by Chinese, e.g. 女',
+      gallery_empty: 'No matching Nüshu characters found',
+    });
+    Object.assign(I18N.nushu, {
+      gallery_chars: '𛊰', gallery_desc: '𛊛𛇺𛊰𛊛𛇺𛊰𛊛𛇺𛊰。',
+      gallery_title: '𛊛𛇺𛊰', gallery_flip_title: '𛊛𛇺𛊰',
+      gallery_flip_desc: '𛊛𛇺𛊰𛊛𛇺𛊰𛊛𛇺𛊰𛊛𛇺𛊰。',
+      gallery_source_title: '𛊛𛇺𛊰', gallery_source_desc: '𛊛𛇺𛊰𛊛𛇺𛊰𛊛𛇺𛊰。',
+      gallery_search_placeholder: '𛊛𛇺，𛆁',
+      gallery_empty: '𛊰𛊰𛊰𛊛𛇺𛊰',
+    });
+
+    async function onLangChange(lang) {
+      const t = I18N[lang] || I18N.zh;
+      const searchInput = document.getElementById('searchInput');
+      if (searchInput) {
+        searchInput.placeholder = t.gallery_search_placeholder || '搜索汉字，如：女';
+      }
+      await loadNushuData();
+      renderGallery(NUSHU_DATA);
+    }
+
+    const grid = document.getElementById('charGrid');
+    const searchInput = document.getElementById('searchInput');
+
+    function renderGallery(data) {
+      if (!data || data.length === 0) {
+        grid.innerHTML = `<div class="gallery-empty" data-i18n="gallery_empty">未找到匹配的女书字符</div>`;
+        document.getElementById('charCount').textContent = 0;
+        return;
+      }
+      document.getElementById('charCount').textContent = data.length;
+      grid.innerHTML = data.map((item) => `
+        <div class="char-card" data-hanzi="${item.hanzi}" onclick="this.classList.toggle('flipped')">
+          <div class="char-card-inner">
+            <div class="char-front nushu-char nushu-global">${item.nushu[0]}</div>
+            <div class="char-back">
+              <div class="chu-char nushu-char nushu-global">${item.hanzi}</div>
+              <div class="chu-note nushu-global">${item.nushu.length > 1 ? item.nushu.slice(1).join(' ') : ''}</div>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    async function init() {
+      await loadNushuData();
+      renderGallery(NUSHU_DATA);
+    }
+    init();
+
+    let searchTimer;
+    searchInput.addEventListener('input', async () => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(async () => {
+        await loadNushuData();
+        const q = searchInput.value.trim();
+        if (!q) {
+          renderGallery(NUSHU_DATA);
+          return;
+        }
+        const filtered = NUSHU_DATA.filter(item =>
+          item.hanzi.includes(q) ||
+          item.nushu.some(n => n.includes(q))
+        );
+        renderGallery(filtered);
+      }, 200);
+    });
+  </script>
+</body>
+</html>

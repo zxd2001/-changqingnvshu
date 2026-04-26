@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="brand_title_courses">传承人课程 · changqingnvshu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="logo/51eb5cf89d91a5686490c070c5e32028.jpg" alt="changqingnvshu" data-i18n-alt="brand_name" class="logo-img"><span data-i18n="brand_name">changqingnvshu</span></a>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">首页</a>
+        <a href="convert.html" class="nav-link" data-i18n="nav_convert">语言转换</a>
+        <a href="gallery.html" class="nav-link" data-i18n="nav_gallery">字符展览</a>
+        <a href="courses.html" class="nav-link active" data-i18n="nav_courses">传承人课程</a>
+        <a href="practice.html" class="nav-link" data-i18n="nav_practice">每日一练</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单"><span class="hamburger"></span></button>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container page-hero-content">
+      <div class="section-tag" data-i18n="nav_courses">学习女书</div>
+      <h1><span data-i18n="brand_name">changqingnvshu</span> · <span data-i18n="nav_courses">传承人课程</span></h1>
+      <p data-i18n="courses_hero_desc">跟随女书传承人，从零开始学习这一独特的女性文字。免费视频入门，付费课程深入。</p>
+    </div>
+  </section>
+
+  <!-- Courses -->
+  <section class="courses-section">
+    <div class="container">
+      <div class="courses-grid">
+        <!-- Free Course 1 -->
+        <div class="course-card">
+          <div class="course-video-wrapper">
+            <video
+              id="courseVideo1"
+              src="视频/女书课程视频（1）.mp4"
+              poster="网页图片/日系网页风格女书宣传海报生成 (4).png"
+              preload="metadata"
+              style="width:100%; height:100%; object-fit:cover; border-radius: inherit; background:#000;"
+            ></video>
+            <div class="course-play-overlay" id="courseOverlay1" onclick="playCourseVideo('courseVideo1')">
+              <div class="play-btn"></div>
+            </div>
+            <button class="course-fullscreen-btn" id="courseFsBtn1" onclick="toggleFullscreen('courseVideo1')" style="display:none;" title="全屏">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg>
+            </button>
+            <span class="course-badge">Free · 免费</span>
+          </div>
+          <div class="course-info">
+            <h3 data-i18n="course1_title">女书入门 · 认识女性文字</h3>
+            <p data-i18n="course1_desc">本课程为免费入门课程，带你了解女书的历史渊源、字符特点，以及基础书写方法。视频可直接在网页上观看。</p>
+            <div class="course-meta">
+              <span data-i18n="course_duration_1">约45分钟</span>
+              <span data-i18n="course_level_beginner">零基础</span>
+              <span data-i18n="course_free">免费</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Free Course 2 -->
+        <div class="course-card">
+          <div class="course-video-wrapper">
+            <img src="网页图片/日系网页风格女书宣传海报生成 (6).png" alt="Nüshu Writing Basics" data-i18n-alt="course2_img_alt" onerror="this.style.background='var(--primary-dark)'">
+            <div class="course-play-overlay" onclick="showVideoNotice(this)">
+              <div class="play-btn"></div>
+            </div>
+            <span class="course-badge">Free · 免费</span>
+          </div>
+          <div class="course-info">
+            <h3 data-i18n="course2_title">女书书写基础</h3>
+            <p data-i18n="course2_desc">学习女书的基本笔画与书写规范，从简单的字符开始临摹，逐步掌握女书的书写技巧与审美。</p>
+            <div class="course-meta">
+              <span data-i18n="course_duration_2">约60分钟</span>
+              <span data-i18n="course_level_intro">入门级</span>
+              <span data-i18n="course_free">免费</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Premium CTA -->
+      <div class="premium-cta">
+        <div class="premium-cta-content">
+          <div class="section-tag" style="background: rgba(255,255,255,0.2); color: white; margin-bottom: 16px;" data-i18n="course_advanced">进阶课程</div>
+          <h2 data-i18n="course_premium_title">跟随传承人深入学习</h2>
+          <p data-i18n="course_premium_desc">扫码进入课程街平台，观看由女书传承人亲自教授的完整付费课程，包含进阶字符、语法结构、女书文献阅读等。</p>
+          <div class="qr-section">
+            <div class="qr-code-placeholder">
+              <svg width="130" height="130" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg" style="display:block;border-radius:8px;">
+                <rect width="130" height="130" fill="white" rx="8"/>
+                <rect x="10" y="10" width="40" height="40" rx="4" fill="#2A7A6F"/>
+                <rect x="80" y="10" width="40" height="40" rx="4" fill="#2A7A6F"/>
+                <rect x="10" y="80" width="40" height="40" rx="4" fill="#2A7A6F"/>
+                <rect x="60" y="60" width="10" height="10" fill="#2A7A6F"/>
+                <rect x="80" y="60" width="10" height="10" fill="#2A7A6F"/>
+                <rect x="60" y="80" width="10" height="10" fill="#2A7A6F"/>
+                <rect x="80" y="80" width="10" height="10" fill="#2A7A6F"/>
+                <rect x="100" y="60" width="10" height="10" fill="#2A7A6F"/>
+                <rect x="60" y="100" width="10" height="10" fill="#2A7A6F"/>
+                <rect x="80" y="100" width="10" height="10" fill="#2A7A6F"/>
+                <rect x="100" y="80" width="10" height="10" fill="#2A7A6F"/>
+                <rect x="100" y="100" width="10" height="10" fill="#2A7A6F"/>
+              </svg>
+              <span data-i18n="course_qr_hint">扫码观看完整课程</span>
+            </div>
+            <div class="qr-note">
+              <h3 data-i18n="course_platform_name">课程街 · KECHENGJIE</h3>
+              <p data-i18n="course_qr_desc">扫描上方二维码，进入课程街平台，观看女书传承人完整付费课程内容。</p>
+              <a href="#" class="btn btn-primary" style="background: white; color: var(--primary); border-color: white;" data-i18n="course_qr_btn">前往课程街 →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Modules -->
+      <div style="margin-top: 48px;">
+        <h2 class="section-title" style="text-align: center; font-size: 1.5rem; margin-bottom: 32px;" data-i18n="course_modules_title">课程内容概览</h2>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+          <div style="padding: 24px; background: white; border-radius: var(--radius); border: 1px solid var(--border);">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: var(--primary); font-weight: 700;">01</div>
+            <h3 style="font-size: 1rem; margin-bottom: 8px;" data-i18n="course_mod1">女书历史与文化</h3>
+            <p style="font-size: 0.875rem; color: var(--text-light);" data-i18n="course_mod1_desc">深入了解女书的历史起源、社会背景与文化意义。</p>
+          </div>
+          <div style="padding: 24px; background: white; border-radius: var(--radius); border: 1px solid var(--border);">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: var(--primary); font-weight: 700;">02</div>
+            <h3 style="font-size: 1rem; margin-bottom: 8px;" data-i18n="course_mod2">女书字符体系</h3>
+            <p style="font-size: 0.875rem; color: var(--text-light);" data-i18n="course_mod2_desc">学习396个女书字符的构成规律与发音对应关系。</p>
+          </div>
+          <div style="padding: 24px; background: white; border-radius: var(--radius); border: 1px solid var(--border);">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: var(--primary); font-weight: 700;">03</div>
+            <h3 style="font-size: 1rem; margin-bottom: 8px;" data-i18n="course_mod3">书写与临摹技巧</h3>
+            <p style="font-size: 0.875rem; color: var(--text-light);" data-i18n="course_mod3_desc">掌握女书的笔画特点，进行规范书写与作品创作。</p>
+          </div>
+          <div style="padding: 24px; background: white; border-radius: var(--radius); border: 1px solid var(--border);">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: var(--primary); font-weight: 700;">04</div>
+            <h3 style="font-size: 1rem; margin-bottom: 8px;" data-i18n="course_mod4">女书文献阅读</h3>
+            <p style="font-size: 0.875rem; color: var(--text-light);" data-i18n="course_mod4_desc">学习阅读传统女书作品，包括三朝书、歌谣等。</p>
+          </div>
+          <div style="padding: 24px; background: white; border-radius: var(--radius); border: 1px solid var(--border);">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: var(--primary); font-weight: 700;">05</div>
+            <h3 style="font-size: 1rem; margin-bottom: 8px;" data-i18n="course_mod5">女书创作与传播</h3>
+            <p style="font-size: 0.875rem; color: var(--text-light);" data-i18n="course_mod5_desc">学习用女书进行创作，并将女书文化传播给更多人。</p>
+          </div>
+          <div style="padding: 24px; background: white; border-radius: var(--radius); border: 1px solid var(--border);">
+            <div style="width: 40px; height: 40px; border-radius: 10px; background: var(--accent); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; color: var(--primary); font-weight: 700;">06</div>
+            <h3 style="font-size: 1rem; margin-bottom: 8px;" data-i18n="course_mod6">女书数字保护</h3>
+            <p style="font-size: 0.875rem; color: var(--text-light);" data-i18n="course_mod6_desc">了解女书的数字化保护技术，参与非遗传承行动。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="logo/51eb5cf89d91a5686490c070c5e32028.jpg" alt="changqingnvshu" data-i18n-alt="brand_name" class="footer-logo-img">
+          <span data-i18n="brand_name">changqingnvshu</span>
+        </a>
+        <p data-i18n="footer_desc">传承江永女书文化，让世界看见女性文字的独特魅力。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_explore">探索</h4>
+        <ul>
+          <li><a href="convert.html" data-i18n="nav_convert">语言转换</a></li>
+          <li><a href="gallery.html" data-i18n="nav_gallery">字符展览</a></li>
+          <li><a href="courses.html" data-i18n="nav_courses">传承人课程</a></li>
+          <li><a href="practice.html" data-i18n="nav_practice">每日一练</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_about">关于</h4>
+        <ul><li><a href="index.html#about" data-i18n="footer_about_link">女书简介</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_contact">联系</h4>
+        <ul><li><a href="#" data-i18n="footer_coop_link">合作咨询</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><span data-i18n="footer_copyright">© 2026 常青女书 · NUSHU · 江永女书文化传播平台 · 仅供学习与文化传播使用</span></div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Courses page i18n
+    Object.assign(I18N.zh, {
+      courses_hero_desc: '跟随女书传承人，从零开始学习这一独特的女性文字。免费视频入门，付费课程深入。',
+      course1_title: '女书入门 · 认识女性文字', course1_desc: '本课程为免费入门课程，带你了解女书的历史渊源、字符特点，以及基础书写方法。视频可直接在网页上观看。',
+      course2_title: '女书书写基础', course2_desc: '学习女书的基本笔画与书写规范，从简单的字符开始临摹，逐步掌握女书的书写技巧与审美。',
+      course_duration_1: '约45分钟', course_duration_2: '约60分钟',
+      course_level_beginner: '零基础', course_level_intro: '入门级', course_free: '免费',
+      course_advanced: '进阶课程', course_premium_title: '跟随传承人深入学习',
+      course_premium_desc: '扫码进入课程街平台，观看由女书传承人亲自教授的完整付费课程，包含进阶字符、语法结构、女书文献阅读等。',
+      course_qr_hint: '扫码观看完整课程', course_qr_desc: '扫描上方二维码，进入课程街平台，观看女书传承人完整付费课程内容。',
+      course_qr_btn: '前往课程街 →', course_modules_title: '课程内容概览',
+      course_mod1: '女书历史与文化', course_mod1_desc: '深入了解女书的历史起源、社会背景与文化意义。',
+      course_mod2: '女书字符体系', course_mod2_desc: '学习396个女书字符的构成规律与发音对应关系。',
+      course_mod3: '书写与临摹技巧', course_mod3_desc: '掌握女书的笔画特点，进行规范书写与作品创作。',
+      course_mod4: '女书文献阅读', course_mod4_desc: '学习阅读传统女书作品，包括三朝书、歌谣等。',
+      course_mod5: '女书创作与传播', course_mod5_desc: '学习用女书进行创作，并将女书文化传播给更多人。',
+      course_mod6: '女书数字保护', course_mod6_desc: '了解女书的数字化保护技术，参与非遗传承行动。',
+      course1_img_alt: '女书入门课程', course2_img_alt: '女书书写基础',
+      course_platform_name: '课程街 · KECHENGJIE',
+    });
+    Object.assign(I18N.en, {
+      courses_hero_desc: 'Learn Nüshu from cultural inheritors, from zero to fluency. Free video introduction, paid courses for depth.',
+      course1_title: 'Nüshu Basics · The Women\'s Script', course1_desc: 'Free introductory course covering the history, character features, and basic writing methods of Nüshu.',
+      course2_title: 'Nüshu Writing Fundamentals', course2_desc: 'Learn the basic strokes and writing standards of Nüshu, starting from simple characters.',
+      course_duration_1: '~45 min', course_duration_2: '~60 min',
+      course_level_beginner: 'Beginner', course_level_intro: 'Introductory', course_free: 'Free',
+      course_advanced: 'Advanced', course_premium_title: 'Learn from Nüshu Inheritors',
+      course_premium_desc: 'Scan the QR code to access the full paid course platform with advanced character lessons, grammar, and literature reading.',
+      course_qr_hint: 'Scan to watch full course', course_qr_desc: 'Scan the QR code above to access the course platform.',
+      course_qr_btn: 'Go to Course Platform →', course_modules_title: 'Course Content Overview',
+      course_mod1: 'Nüshu History & Culture', course_mod1_desc: 'Deep dive into the historical origins and cultural significance of Nüshu.',
+      course_mod2: 'Nüshu Character System', course_mod2_desc: 'Learn the structure and pronunciation mapping of the 396 Nüshu characters.',
+      course_mod3: 'Writing & Calligraphy Skills', course_mod3_desc: 'Master Nüshu strokes and create your own calligraphy works.',
+      course_mod4: 'Reading Nüshu Literature', course_mod4_desc: 'Learn to read traditional Nüshu works including "Three-Day Letters" and folk songs.',
+      course_mod5: 'Nüshu Creation & Spreading', course_mod5_desc: 'Create your own Nüshu works and spread this cultural heritage.',
+      course_mod6: 'Digital Preservation of Nüshu', course_mod6_desc: 'Learn about digital preservation techniques for Nüshu and participate in ICH protection.',
+      course1_img_alt: 'Nüshu Beginner Course', course2_img_alt: 'Nüshu Writing Basics',
+      course_platform_name: 'Course Platform · KECHENGJIE',
+    });
+    Object.assign(I18N.nushu, {
+      courses_hero_desc: '𛊸𛆹𛊜𛊸𛆹𛊜𛊸𛆹𛊜。',
+      course1_title: '𛊛𛇺𛊰 · 𛊛𛇺𛊰', course1_desc: '𛊸𛆹𛊜𛊸𛆹𛊜。',
+      course2_title: '𛊛𛇺𛊰', course2_desc: '𛊸𛆹𛊜𛊸𛆹𛊜。',
+      course_duration_1: '45𛊻', course_duration_2: '60𛊻',
+      course_level_beginner: '𛊛𛇺', course_level_intro: '𛊛𛇺', course_free: '𛊰',
+      course_advanced: '𛊸𛆹𛊜', course_premium_title: '𛊸𛆹𛊜',
+      course_premium_desc: '𛊸𛆹𛊜𛊸𛆹𛊜。',
+      course_qr_hint: '𛊸𛆹𛊜', course_qr_desc: '𛊸𛆹𛊜。',
+      course_qr_btn: '𛊸𛆹𛊜 →', course_modules_title: '𛊸𛆹𛊜',
+      course_mod1: '𛊛𛇺𛊰', course_mod1_desc: '𛊛𛇺𛊰。',
+      course_mod2: '𛊛𛇺𛊰', course_mod2_desc: '𛊛𛇺𛊰。',
+      course_mod3: '𛊛𛇺𛊰', course_mod3_desc: '𛊛𛇺𛊰。',
+      course_mod4: '𛊛𛇺𛊰', course_mod4_desc: '𛊛𛇺𛊰。',
+      course_mod5: '𛊛𛇺𛊰', course_mod5_desc: '𛊛𛇺𛊰。',
+      course_mod6: '𛊛𛇺𛊰', course_mod6_desc: '𛊛𛇺𛊰。',
+      course1_img_alt: '𛊛𛇺𛊰', course2_img_alt: '𛊛𛇺𛊰',
+      course_platform_name: '𛊸𛆹𛊜 · KECHENGJIE',
+    });
+
+    function playCourseVideo(id) {
+      const video = document.getElementById(id);
+      const overlay = document.getElementById(id.replace('Video', 'Overlay'));
+      const fsBtn = document.getElementById(id.replace('Video', 'FsBtn'));
+      if (!video) return;
+      if (video.paused) {
+        video.play();
+        if (overlay) overlay.style.opacity = '0';
+        if (fsBtn) fsBtn.style.display = 'flex';
+      } else {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        } else {
+          video.requestFullscreen();
+        }
+      }
+    }
+
+    function toggleFullscreen(id) {
+      const video = document.getElementById(id);
+      if (!video) return;
+      if (document.fullscreenElement) {
+        document.exitFullscreen();
+      } else {
+        video.requestFullscreen();
+      }
+    }
+  </script>
+</body>
+</html>

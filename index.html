@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="brand_title_home">changqingnvshu · Nushu Cultural Heritage</title>
+  <meta name="description" data-i18n-content="meta_desc" content="changqingnvshu — 江永女书文化传播平台，探索汉字与女书的转换，领略世界唯一女性文字的魅力。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loadingScreen">
+    <div id="loadingImg"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="logo/51eb5cf89d91a5686490c070c5e32028.jpg" alt="changqingnvshu" data-i18n-alt="brand_name" class="logo-img">
+        <span data-i18n="brand_name">changqingnvshu</span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link active" data-i18n="nav_home">首页</a>
+        <a href="convert.html" class="nav-link" data-i18n="nav_convert">语言转换</a>
+        <a href="gallery.html" class="nav-link" data-i18n="nav_gallery">字符展览</a>
+        <a href="courses.html" class="nav-link" data-i18n="nav_courses">传承人课程</a>
+        <a href="practice.html" class="nav-link" data-i18n="nav_practice">每日一练</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu" data-i18n-aria="aria_menu"><span class="hamburger"></span></button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern"></div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <div class="hero-tag" data-i18n="hero_tag">世界唯一女性文字</div>
+        <h1 class="hero-title">
+          <span data-i18n="hero_title_1">江永女书</span><br>
+          <span class="highlight" data-i18n="hero_title_2">千年的女性密语</span>
+        </h1>
+        <p class="hero-desc" data-i18n="hero_desc">
+          女书是湖南省江永县女性专属的表音文字体系，起源于明末清初，承载着旧时女性的生活、情感与智慧。每一个字符，都是一段不应被遗忘的历史。
+        </p>
+        <div class="hero-actions">
+          <a href="convert.html" class="btn btn-primary" data-i18n="hero_btn_convert">开始转换</a>
+          <a href="gallery.html" class="btn btn-outline" data-i18n="hero_btn_gallery">字符展览</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-float nushu-global" id="heroFloat1"></div>
+        <div class="hero-float nushu-global" id="heroFloat2"></div>
+        <div class="hero-float nushu-global" id="heroFloat3"></div>
+        <div class="hero-card">
+          <div class="hero-deco hero-deco-1"></div>
+          <div class="hero-deco hero-deco-2"></div>
+          <div class="hero-card-inner">
+            <div class="hero-card-img" id="heroImg"></div>
+            <div class="hero-card-text">
+              <div class="hero-card-label" data-i18n="hero_card_label">女书 · NUSHU</div>
+              <div class="hero-nushu-char nushu-global" id="heroMainChar"></div>
+              <div class="chus" id="heroSubChars"></div>
+              <button class="hero-shuffle-btn" id="heroShuffleBtn" aria-label="随机切换女书字符" title="随机切换">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 12a9 9 0 1 1-9-9"/>
+                  <polyline points="21 3 21 9 15 9"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Features -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="feat_tag">四大功能</div>
+        <h2 class="section-title" data-i18n="feat_title">探索女书文化之旅</h2>
+        <p class="section-desc" data-i18n="feat_desc">从汉字转换到字符展览，从传承人课程到每日一练，多维度体验女书的独特魅力。</p>
+      </div>
+      <div class="features-grid">
+        <a href="convert.html" class="feature-card">
+          <div class="feature-icon">字</div>
+          <h3 data-i18n="feat_convert_title">语言转换</h3>
+          <p data-i18n="feat_convert_desc">输入汉字，即可看到对应的女书字符。收录3500+常用汉字与396个女书字符的对照。</p>
+        </a>
+        <a href="gallery.html" class="feature-card">
+          <div class="feature-icon">展</div>
+          <h3 data-i18n="feat_gallery_title">字符展览</h3>
+          <p data-i18n="feat_gallery_desc">396个女书字符如小牌子般陈列，点击翻转即可查看对应的汉字与释义。</p>
+        </a>
+        <a href="courses.html" class="feature-card">
+          <div class="feature-icon">课</div>
+          <h3 data-i18n="feat_courses_title">传承人课程</h3>
+          <p data-i18n="feat_courses_desc">免费视频课程入门，扫码进入课程街观看完整付费课程，跟随传承人深入学习。</p>
+        </a>
+        <a href="practice.html" class="feature-card">
+          <div class="feature-icon">练</div>
+          <h3 data-i18n="feat_practice_title">每日一练</h3>
+          <p data-i18n="feat_practice_desc">每天一句女书临摹练习，上传你的临摹作品，与大家共同传承女书文化。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Image Strip -->
+  <section class="image-strip">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag" data-i18n="feat_world_tag">女书世界</div>
+        <h2 class="section-title" data-i18n="feat_world_title">女书 · 文字之美</h2>
+      </div>
+      <div class="strip-scroll">
+        <div class="strip-item">
+          <img src="网页图片/日系网页风格女书宣传海报生成 (1).png" alt="Nushu Poster 1" data-i18n-alt="feat_world_alt1" loading="lazy">
+        </div>
+        <div class="strip-item">
+          <img src="网页图片/日系网页风格女书宣传海报生成 (2).png" alt="Nushu Poster 2" data-i18n-alt="feat_world_alt2" loading="lazy">
+        </div>
+        <div class="strip-item">
+          <img src="网页图片/日系网页风格女书宣传海报生成 (3).png" alt="Nushu Poster 3" data-i18n-alt="feat_world_alt3" loading="lazy">
+        </div>
+        <div class="strip-item">
+          <img src="网页图片/日系网页风格女书宣传海报生成 (7).png" alt="Nushu Poster 7" data-i18n-alt="feat_world_alt7" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="section-tag" data-i18n="about_tag">关于女书</div>
+          <h2 data-i18n="about_title">什么是女书？</h2>
+          <p data-i18n="about_p1">
+            女书（Nüshu）是流传于湖南省永州市江永县的一种特殊文字，只在女性之间使用和传承，
+            是迄今为止世界上发现的唯一一种完全由女性创造并使用的文字体系。
+          </p>
+          <p data-i18n="about_p2">
+            女书是一种标音文字，每个字符代表一个音节，与江永当地的土话相对应。
+            女性用女书来写日记、通信、编唱等，记录她们的生活、情感和愿望。
+          </p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-num nushu-char nushu-global">396</span>
+              <span class="stat-label" data-i18n="stat_chars">女书字符数</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">3500+</span>
+              <span class="stat-label" data-i18n="stat_hanzi">收录汉字数</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">300+</span>
+              <span class="stat-label" data-i18n="stat_years">年历史传承</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">UNESCO</span>
+              <span class="stat-label" data-i18n="stat_unesco">世界遗产认证</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="网页图片/日系网页风格女书宣传海报生成 (5).png" alt="Nushu Culture" data-i18n-alt="about_img_alt" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating Nushu Cards -->
+  <div class="floating-cards" id="floatingCards" aria-hidden="true"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="logo/51eb5cf89d91a5686490c070c5e32028.jpg" alt="changqingnvshu" data-i18n-alt="brand_name" class="footer-logo-img">
+          <span data-i18n="brand_name">changqingnvshu</span>
+        </a>
+        <p data-i18n="footer_desc">传承江永女书文化，让世界看见女性文字的独特魅力。changqingnvshu致力于女书数字化保护与传播。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_explore">探索</h4>
+        <ul>
+          <li><a href="convert.html" data-i18n="nav_convert">语言转换</a></li>
+          <li><a href="gallery.html" data-i18n="nav_gallery">字符展览</a></li>
+          <li><a href="courses.html" data-i18n="nav_courses">传承人课程</a></li>
+          <li><a href="practice.html" data-i18n="nav_practice">每日一练</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_about">关于</h4>
+        <ul>
+          <li><a href="#about" data-i18n="footer_about_link">女书简介</a></li>
+          <li><a href="#features" data-i18n="footer_features_link">功能介绍</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_contact">联系</h4>
+        <ul>
+          <li><a href="#" data-i18n="footer_inheritor_link">女书传承人</a></li>
+          <li><a href="#" data-i18n="footer_coop_link">合作咨询</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span data-i18n="footer_copyright">© 2026 changqingnvshu · NUSHU · 江永女书文化传播平台 · 仅供学习与文化传播使用</span>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

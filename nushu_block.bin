@@ -1,0 +1,34 @@
+nushu: {
+
+    nav_home: '𛆞𛇩', nav_convert: '𛅺𛈔𛋺𛊧', nav_gallery: '𛈤𛆖𛊀𛋂',
+    nav_courses: '𛈆𛋙𛅳𛋰𛈆', nav_practice: '𛉟𛇈𛅰𛈏',
+
+    hero_tag: '𛆓𛆄𛊄𛅰𛆁𛉾𛆂𛈤',
+    hero_title_1: '𛈌𛈍𛆁𛈬', hero_title_2: '𛆉𛆥𛉘𛆁𛉾𛇓𛅺',
+    hero_desc: '𛆁𛈬𛆹𛋘𛉺𛊜𛈌𛈍𛋟𛆁𛉾𛈌𛊼𛉘𛇅𛆱𛆂𛈤𛋒𛆱，𛆻𛆧𛆱𛇾𛋍𛊭𛊾，𛋙𛇥𛊖𛆝𛆸𛆁𛉾𛉘𛇏𛋶、𛊭𛇕𛆱𛊝𛆌。𛉟𛅰𛆅𛈤𛆖，𛋗𛆹𛅰𛋇𛆳𛆱𛇣𛅺𛆡𛉘𛉄𛆹。',
+    hero_btn_convert: '𛇶𛇴𛋺𛊧', hero_btn_gal𛆿ery: '𛈤𛆖𛊀𛋂',hero_btn_gallery: '𛈤𛆖𛊀𛋂',
+    hero_card_label: '𛆁𛈬 · NUSHU',
+    hero_card_meaning: '𛅻𛇅𛆁𛉾、𛆁𛆑',
+
+    feat_tag: '𛈗𛅻𛆃𛈷', feat_title: '𛋃𛈂𛆁𛈬𛆂𛅽𛆷𛆽',
+    feat_desc: '𛈽𛊧𛈤𛋺𛊧𛆛𛈤𛆖𛊀𛋂，𛈽𛈆𛋙𛅳𛋰𛈆𛆛𛉟𛇈𛅰𛈏，𛈁𛊄𛋥𛋒𛈏𛆁𛈬𛉘𛋥𛆶𛋪𛉄。',
+    feat_convert_title: '𛅺𛈔𛋺𛊧', feat_convert_desc: '𛈬𛅱𛊧𛈤，𛋔𛆄𛆣𛆛𛆬𛆱𛉘𛆁𛈬𛈤𛆖。𛈀𛋗350𛆿+𛈾𛈍𛊧𛈤𛆱396𛆅𛆁𛈬𛈤𛆖𛉘𛆬𛉔。',
+    feat_gallery_title: '𛈤𛆖𛊀𛋂', feat_gallery_desc: '396𛆅𛆁𛈬𛈤𛆖𛇄𛅿𛇢𛆑𛈺𛊝𛆍，𛉸𛊐𛆠𛋺𛋔𛆄𛉗𛆣𛆬𛆱𛉘𛊧𛈤𛆱𛆈𛅺。',
+    feat_courses_title: '𛈆𛋙𛅳𛋰𛈆', feat_courses_desc: '𛋉𛋻𛆹𛊘𛋰𛈆𛅱𛋁，𛈗𛇀𛈯𛅱𛋰𛈆𛉌𛇕𛆣𛆧𛇆𛆖𛋻𛋰𛈆，𛆃𛉅𛈆𛋙𛅳𛈛𛅱𛉬𛆓。',
+    feat_practice_title: '𛉟𛇈𛅰𛈏', feat_practice_desc: '𛉟𛆤𛅰𛆘𛆁𛈬𛇇𛋍𛈏𛆓，𛆈𛈆𛈪𛉘𛇇𛋍𛇍𛉞，𛆱𛅻𛉊𛈌𛊤𛈆𛋙𛆁𛈬𛆂𛅽。',
+    about_img_alt: '𛆁𛈬𛆂𛅽',
+    feat_world_tag: '𛆁𛈬𛆓𛆄', feat_world_title: '𛆁𛈬 · 𛆂𛈤𛆷𛋪',
+    feat_world_alt1: '𛆁𛈬𛉝𛇣1', feat_world_alt2: '𛆁𛈬𛉝𛇣2', feat_world_alt3: '𛆁𛈬𛉝𛇣3', feat_world_alt7: '𛆁𛈬𛉝𛇣7',
+    about_img_alt: '𛆁𛈬𛆂𛅽',
+    footer_about_link: '𛆁𛈬𛆃𛆄', footer_features_link: '𛆃𛈷𛆄𛋙',
+    footer_inheritor_link: '𛆁𛈬𛈆𛋙𛅳', footer_coop_link: '𛈩𛇍𛈤𛊍',
+    aria_menu: '𛈠𛆍',
+    meta_desc: '𛈾𛊭𛆁𛈬 — 𛈌𛈍𛆁𛈬𛆂𛅽𛈆𛇣𛇛𛅻，𛋃𛈂𛊧𛈤𛆱𛆁𛈬𛉘𛋺𛊧，𛉼𛆜𛆓𛆄𛊄𛅰𛆁𛉾𛆂𛈤𛉘𛋪𛉄。',
+    brand_name: '𛈾𛊭𛆁𛈬',
+    brand_title_home: '𛈾𛊭𛆁𛈬 · Changqing Nüshu',
+    brand_title_convert: '𛅺𛈔𛋺𛊧 · 𛈾𛊭𛆁𛈬',
+    brand_title_gal𛆿ery: '𛈤𛆖𛊀𛋂 · 𛈾𛊭𛆁𛈬',
+    brand_title_practice: '𛉟𛇈𛅰𛈏 · 𛈾𛊭𛆁𛈬',
+    brand_title_courses: '𛈆𛋙𛅳𛋰𛈆 · 𛈾𛊭𛆁𛈬',
+  }
+};

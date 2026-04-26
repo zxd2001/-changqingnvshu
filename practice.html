@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="brand_title_practice">每日一练 · changqingnvshu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo"><img src="logo/51eb5cf89d91a5686490c070c5e32028.jpg" alt="changqingnvshu" data-i18n-alt="brand_name" class="logo-img"><span data-i18n="brand_name">changqingnvshu</span></a>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">首页</a>
+        <a href="convert.html" class="nav-link" data-i18n="nav_convert">语言转换</a>
+        <a href="gallery.html" class="nav-link" data-i18n="nav_gallery">字符展览</a>
+        <a href="courses.html" class="nav-link" data-i18n="nav_courses">传承人课程</a>
+        <a href="practice.html" class="nav-link active" data-i18n="nav_practice">每日一练</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu" data-i18n-aria="aria_menu"><span class="hamburger"></span></button>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container page-hero-content">
+      <div class="section-tag" data-i18n="nav_practice">每日一练</div>
+      <h1><span data-i18n="brand_name">changqingnvshu</span> · <span data-i18n="nav_practice">每日一练</span></h1>
+      <p data-i18n="practice_hero_desc">每天一句女书，临摹练习。上传你的作品，与大家共同传承这一珍贵的文化遗产。</p>
+    </div>
+  </section>
+
+  <!-- Practice -->
+  <section class="practice-section">
+    <div class="container">
+      <!-- Daily Sentence -->
+      <div class="daily-sentence" id="dailySentence">
+        <div class="daily-label">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span id="todayDate"></span>
+        </div>
+        <div class="daily-hanzi" id="dailyHanzi" data-i18n="practice_loading">加载中…</div>
+        <div class="daily-sep"><span class="daily-sep-arrow" data-i18n="practice_sep">- - -</span></div>
+        <div class="daily-nushu nushu-char nushu-global" id="dailyNushu">…</div>
+        <p class="daily-date"><span data-i18n="practice_hint">点击字符卡片可查看详细对照 →</span> <a href="convert.html" data-i18n="nav_convert" style="color: var(--primary);">语言转换</a></p>
+      </div>
+
+      <!-- Upload Section -->
+      <div class="upload-section">
+        <h3 data-i18n="upload_title">上传你的临摹作品</h3>
+        <p data-i18n="upload_desc">拍下你今天临摹的「每日一练」女书句子，上传至作品墙，与大家分享你的学习成果。</p>
+
+        <div class="upload-zone" id="uploadZone">
+          <input type="file" id="fileInput" accept="image/*">
+          <div class="upload-icon">
+            <svg class="upload-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <polyline points="21 15 16 10 5 21"/>
+            </svg>
+          </div>
+          <h4 data-i18n="upload_drag_title">点击上传或拖拽图片</h4>
+          <p data-i18n="upload_drag_desc">支持 JPG、PNG 格式，文件大小不超过 5MB<br><span data-i18n="upload_deadline">每天 0 点前截止，逾期请次日再上传</span></p>
+        </div>
+
+        <div class="upload-preview" id="uploadPreview">
+          <img id="previewImg" alt="Preview" data-i18n-alt="upload_preview_alt">
+          <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <input type="text" id="uploaderName" data-i18n-placeholder="uploader_placeholder" placeholder="你的名字（选填）" style="padding: 10px 16px; border: 2px solid var(--border); border-radius: var(--radius); font-size: 0.9rem; font-family: inherit; flex: 1; max-width: 200px;">
+            <button class="btn btn-primary" id="submitBtn" data-i18n="submit_btn">提交作品</button>
+            <button class="btn btn-outline" id="cancelBtn" data-i18n="cancel_btn">取消</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Submissions Gallery -->
+      <div class="submissions-gallery">
+        <h3 data-i18n="submissions_title">作品墙 · 临摹展示</h3>
+        <div class="submissions-grid" id="submissionsGrid"></div>
+        <div id="emptySubmissions" data-i18n="submissions_empty" style="text-align: center; padding: 40px; color: var(--text-light); font-size: 0.9rem;">
+          暂无作品上传，成为第一位分享者吧！
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rules -->
+  <section style="padding: 0 0 80px; background: white;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div style="padding: 24px; background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); text-align: center;">
+          <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto 12px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <h3 style="font-size: 1rem; margin-bottom: 8px;" data-i18n="rule1_title">每日0点更新</h3>
+          <p style="font-size: 0.85rem; color: var(--text-light);" data-i18n="rule1_desc">每日0点自动更换练习句子，请在前一天23:59前完成上传。</p>
+        </div>
+        <div style="padding: 24px; background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); text-align: center;">
+          <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto 12px;"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          <h3 style="font-size: 1rem; margin-bottom: 8px;" data-i18n="rule2_title">图片格式</h3>
+          <p style="font-size: 0.85rem; color: var(--text-light);" data-i18n="rule2_desc">支持 JPG、PNG 格式，单张图片不超过 5MB，请拍摄清晰的临摹照片。</p>
+        </div>
+        <div style="padding: 24px; background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border); text-align: center;">
+          <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="display:block;margin:0 auto 12px;"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
+          <h3 style="font-size: 1rem; margin-bottom: 8px;" data-i18n="rule3_title">定期清空</h3>
+          <p style="font-size: 0.85rem; color: var(--text-light);" data-i18n="rule3_desc">作品墙数据定期清空以节省存储空间，建议自行保存重要作品的图片。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="logo/51eb5cf89d91a5686490c070c5e32028.jpg" alt="changqingnvshu" data-i18n-alt="brand_name" class="footer-logo-img"><span data-i18n="brand_name">changqingnvshu</span></a>
+        <p data-i18n="footer_desc">传承江永女书文化，让世界看见女性文字的独特魅力。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_explore">探索</h4>
+        <ul>
+          <li><a href="convert.html" data-i18n="nav_convert">语言转换</a></li>
+          <li><a href="gallery.html" data-i18n="nav_gallery">字符展览</a></li>
+          <li><a href="courses.html" data-i18n="nav_courses">传承人课程</a></li>
+          <li><a href="practice.html" data-i18n="nav_practice">每日一练</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_about">关于</h4>
+        <ul><li><a href="index.html#about" data-i18n="footer_about_link">女书简介</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_contact">联系</h4>
+        <ul><li><a href="#" data-i18n="footer_coop_link">合作咨询</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><span data-i18n="footer_copyright">© 2026 常青女书 · NUSHU · 江永女书文化传播平台 · 仅供学习与文化传播使用</span></div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Practice page i18n
+    Object.assign(I18N.zh, {
+      practice_hero_desc: '每天一句女书，临摹练习。上传你的作品，与大家共同传承这一珍贵的文化遗产。',
+      upload_title: '上传你的临摹作品', upload_desc: '拍下你今天临摹的「每日一练」女书句子，上传至作品墙，与大家分享你的学习成果。',
+      upload_drag_title: '点击上传或拖拽图片', upload_drag_desc: '支持 JPG、PNG 格式，文件大小不超过 5MB',
+      upload_deadline: '每天 0 点前截止，逾期请次日再上传',
+      uploader_placeholder: '你的名字（选填）', submit_btn: '提交作品', cancel_btn: '取消',
+      submissions_title: '作品墙 · 临摹展示', submissions_empty: '暂无作品上传，成为第一位分享者吧！',
+      practice_hint: '点击字符卡片可查看详细对照 →',
+      rule1_title: '每日0点更新', rule1_desc: '每日0点自动更换练习句子，请在前一天23:59前完成上传。',
+      rule2_title: '图片格式', rule2_desc: '支持 JPG、PNG 格式，单张图片不超过 5MB，请拍摄清晰的临摹照片。',
+      rule3_title: '定期清空', rule3_desc: '作品墙数据定期清空以节省存储空间，建议自行保存重要作品的图片。',
+      submit_success: '提交成功！感谢你的临摹作品。',
+      upload_size_error: '图片大小不能超过 5MB',
+      upload_preview_alt: '预览', submission_img_alt: '临摹作品',
+      submit_anonymous: '匿名习字者',
+      practice_loading: '加载中…',
+      practice_sep: '- - -',
+      practice_today_label: '今日练习',
+      practice_year: '年', practice_month: '月', practice_day: '日',
+    });
+    Object.assign(I18N.en, {
+      practice_hero_desc: 'Practice one Nüshu sentence every day, upload your calligraphy, and join the community in preserving this cultural heritage.',
+      upload_title: 'Upload Your Practice', upload_desc: 'Take a photo of your daily Nüshu practice and share it on the community wall.',
+      upload_drag_title: 'Click to upload or drag & drop', upload_drag_desc: 'Supports JPG, PNG · Max 5MB per file',
+      upload_deadline: 'Submissions close at midnight each day',
+      uploader_placeholder: 'Your name (optional)', submit_btn: 'Submit', cancel_btn: 'Cancel',
+      submissions_title: 'Gallery · Practice Showcase', submissions_empty: 'No submissions yet. Be the first to share!',
+      practice_hint: 'Click any character card for details →',
+      rule1_title: 'Updates at Midnight', rule1_desc: 'A new sentence is available each day. Submit before midnight.',
+      rule2_title: 'Image Format', rule2_desc: 'JPG or PNG, max 5MB per image. Please upload a clear photo of your practice.',
+      rule3_title: 'Periodic Cleanup', rule3_desc: 'Gallery data is periodically cleared to save storage. Please keep backups of your important works.',
+      submit_success: 'Submission successful! Thank you for sharing your practice.',
+      upload_size_error: 'Image size cannot exceed 5MB',
+      upload_preview_alt: 'Preview', submission_img_alt: 'Practice work',
+      submit_anonymous: 'Anonymous · Anonymous Practitioner',
+      practice_loading: 'Loading…',
+      practice_sep: '- - -',
+      practice_today_label: "Today's Practice",
+      practice_year: '', practice_month: '', practice_day: '',
+    });
+    Object.assign(I18N.nushu, {
+      practice_hero_desc: '𛉟𛆤𛅰𛆘𛆁𛈬，𛇇𛋍𛈏𛆓。𛆈𛈆𛈪𛉘𛇍𛉞，𛆱𛅻𛉊𛈌𛊤𛈆𛋙𛋔𛅰𛆭𛋫𛉘𛆂𛅽𛅺𛊜。',
+      upload_title: '𛆈𛈆𛈪𛉘𛇇𛋍𛇍𛉞', upload_desc: '𛇪𛅽𛈪𛆭𛆤𛇇𛋍𛉘「𛉟𛇈𛅰𛈏」𛆁𛈬𛆘𛆑，𛆈𛈆𛊝𛇍𛉞𛈽，𛆱𛅻𛉊𛆙𛉷𛈪𛉘𛉬𛆓𛈒𛇰。',
+      upload_drag_title: '𛉸𛊐𛆈𛈆𛋶𛈢拽𛋥𛅶', upload_drag_desc: '𛆷𛋣 JPG、PNG 𛈅𛆈，𛆂𛇝𛅻𛅿𛆳𛉤𛉘 5MB',
+      upload_deadline: '𛉟𛆤 0 𛉸𛋋𛋓𛆑，𛊢𛊻𛉁𛇠𛇈𛇥𛆈𛈆',
+      uploader_placeholder: '𛈪𛉘𛇾𛈤（𛈒𛋊）', submit_btn: '𛊹𛆝𛇍𛉞', cancel_btn: '𛇂𛈨',
+      submissions_title: '𛇍𛉞𛈽 · 𛇇𛋍𛊀𛆹', submissions_empty: '𛉾𛇯𛇍𛉞𛆈𛈆，𛈒𛆨𛆒𛅰𛆨𛆙𛉷𛈖𛇪！',
+      practice_hint: '𛉸𛊐𛈤𛆖卡𛅶𛆄𛉗𛆣𛈽𛅿𛆬𛉔 →',
+      rule1_title: '𛉟𛇈0𛉸𛆃𛇹', rule1_desc: '𛉟𛇈0𛉸𛈤𛆒𛆃𛊧𛈏𛆓𛆘𛆑，𛉁𛇥𛋋𛅰𛆤23:59𛋋𛆧𛈒𛆈𛈆。',
+      rule2_title: '𛋥𛅶𛈅𛆈', rule2_desc: '𛆷𛋣 JPG、PNG 𛈅𛆈，𛆍𛈌𛋥𛅶𛆳𛉤𛉘 5MB，𛉁𛇪𛊍𛊭𛊈𛉘𛇇𛋍𛉔𛅶。',
+      rule3_title: '𛉽𛊻𛊭𛉲', rule3_desc: '𛇍𛉞𛈽𛉅𛊐𛉽𛊻𛊭𛉲𛅺𛋓𛊜𛊶𛇭𛉲𛈸，𛇝𛅺𛈤𛇐𛉎𛊶𛊪𛅺𛇍𛉞𛉘𛋥𛅶。',
+      submit_success: '𛊹𛆝𛈒𛆃！𛇕𛋮𛈪𛉘𛇇𛋍𛇍𛉞。',
+      upload_size_error: '𛋥𛅶𛅻𛅿𛆳𛈷𛉤𛉘 5MB',
+      upload_preview_alt: '𛊢𛋂', submission_img_alt: '𛇇𛋍𛇍𛉞',
+      submit_anonymous: 'Anonymous · 𛰕𛇾𛆓𛠤𛠖',
+      practice_loading: '𛊢𛊢𛊢…',
+      practice_sep: '- - -',
+      practice_today_label: '𛉟𛇈𛊢𛊢',
+      practice_year: '𛊻', practice_month: '𛊻𛊰', practice_day: '𛊰',
+    });
+
+    function onLangChange(lang) {
+      const t = I18N[lang] || I18N.zh;
+      const uploadName = document.getElementById('uploaderName');
+      if (uploadName) uploadName.placeholder = t.uploader_placeholder || '你的名字（选填）';
+
+      // Update date format
+      const today = new Date();
+      const yearLabel = t.practice_year || '年';
+      const monthLabel = t.practice_month || '月';
+      const dayLabel = t.practice_day || '日';
+      const dateEl = document.getElementById('todayDate');
+      if (dateEl) dateEl.textContent = `${today.getFullYear()}${yearLabel}${today.getMonth()+1}${monthLabel}${today.getDate()}${dayLabel}`;
+
+      // Update loading & sep
+      const loadingEl = document.getElementById('dailyHanzi');
+      if (loadingEl && t.practice_loading) loadingEl.textContent = t.practice_loading;
+      const sepEl = document.querySelector('.daily-sep-arrow');
+      if (sepEl && t.practice_sep) sepEl.textContent = t.practice_sep;
+
+      renderSubmissions();
+    }
+
+    // ===== Daily Sentence =====
+    (function() {
+      const sentence = getDailySentence();
+      const today = new Date();
+      const t = I18N[currentLang] || I18N.zh;
+      const yearLabel = t.practice_year || '年';
+      const monthLabel = t.practice_month || '月';
+      const dayLabel = t.practice_day || '日';
+      document.getElementById('todayDate').textContent =
+        `${today.getFullYear()}${yearLabel}${today.getMonth()+1}${monthLabel}${today.getDate()}${dayLabel}`;
+      document.getElementById('dailyHanzi').textContent = sentence.hanzi;
+      document.getElementById('dailyNushu').innerHTML = `<span class="nushu-char nushu-global">${sentence.nushu}</span>`;
+    })();
+
+    // ===== Upload Logic =====
+    const uploadZone = document.getElementById('uploadZone');
+    const fileInput = document.getElementById('fileInput');
+    const preview = document.getElementById('uploadPreview');
+    const previewImg = document.getElementById('previewImg');
+    const submitBtn = document.getElementById('submitBtn');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const uploaderName = document.getElementById('uploaderName');
+    let uploadedFile = null;
+
+    uploadZone.addEventListener('click', () => fileInput.click());
+    uploadZone.addEventListener('dragover', e => { e.preventDefault(); uploadZone.classList.add('drag-over'); });
+    uploadZone.addEventListener('dragleave', () => { uploadZone.classList.remove('drag-over'); });
+    uploadZone.addEventListener('drop', e => {
+      e.preventDefault();
+      uploadZone.classList.remove('drag-over');
+      const file = e.dataTransfer.files[0];
+      if (file && file.type.startsWith('image/')) handleFile(file);
+    });
+    fileInput.addEventListener('change', e => {
+      const file = e.target.files[0];
+      if (file) handleFile(file);
+    });
+
+    function handleFile(file) {
+      if (file.size > 5 * 1024 * 1024) { alert(I18N[currentLang]?.upload_size_error || '图片大小不能超过 5MB'); return; }
+      uploadedFile = file;
+      const reader = new FileReader();
+      reader.onload = e => {
+        previewImg.src = e.target.result;
+        preview.classList.add('visible');
+        uploadZone.style.display = 'none';
+      };
+      reader.readAsDataURL(file);
+    }
+
+    cancelBtn.addEventListener('click', () => {
+      uploadedFile = null;
+      fileInput.value = '';
+      previewImg.src = '';
+      preview.classList.remove('visible');
+      uploadZone.style.display = 'block';
+      uploaderName.value = '';
+    });
+
+    submitBtn.addEventListener('click', () => {
+      if (!uploadedFile) return;
+      const reader = new FileReader();
+      reader.onload = e => {
+        const today = new Date();
+        const dateStr = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+        const name = uploaderName.value.trim() || `${I18N[currentLang]?.submit_anonymous || 'Anonymous · 匿名习字者'}`;
+        saveSubmission({
+          imageData: e.target.result, name, date: dateStr,
+          sentence: document.getElementById('dailyHanzi').textContent,
+          nushu: document.getElementById('dailyNushu').textContent
+        });
+        uploadedFile = null; fileInput.value = ''; previewImg.src = '';
+        preview.classList.remove('visible'); uploadZone.style.display = 'block';
+        uploaderName.value = '';
+        renderSubmissions();
+        alert(`${I18N[currentLang]?.submit_success || '提交成功！感谢你的临摹作品。'}\n${I18N[currentLang]?.submit_success ? '' : 'Submission successful! Thank you for sharing your practice.'}`);
+      };
+      reader.readAsDataURL(uploadedFile);
+    });
+
+    function renderSubmissions() {
+      const subs = getSubmissions();
+      const grid = document.getElementById('submissionsGrid');
+      const empty = document.getElementById('emptySubmissions');
+      if (subs.length === 0) {
+        grid.innerHTML = '';
+        empty.style.display = 'block';
+        return;
+      }
+      empty.style.display = 'none';
+      const t = I18N[currentLang] || I18N.zh;
+      grid.innerHTML = subs.slice(0, 24).map(sub => `
+        <div class="submission-item">
+          <img src="${sub.imageData}" alt="${t.submission_img_alt || 'Practice work'}" loading="lazy">
+          <div class="sub-date">${sub.name} · ${sub.date}</div>
+        </div>
+      `).join('');
+    }
+    renderSubmissions();
+  </script>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-i18n="brand_title_convert">语言转换 · changqingnvshu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="logo/51eb5cf89d91a5686490c070c5e32028.jpg" alt="changqingnvshu" data-i18n-alt="brand_name" class="logo-img">
+        <span data-i18n="brand_name">changqingnvshu</span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="index.html" class="nav-link" data-i18n="nav_home">首页</a>
+        <a href="convert.html" class="nav-link active" data-i18n="nav_convert">语言转换</a>
+        <a href="gallery.html" class="nav-link" data-i18n="nav_gallery">字符展览</a>
+        <a href="courses.html" class="nav-link" data-i18n="nav_courses">传承人课程</a>
+        <a href="practice.html" class="nav-link" data-i18n="nav_practice">每日一练</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="菜单">
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container page-hero-content">
+      <div class="section-tag" data-i18n="convert_hero_tag">核心功能</div>
+      <h1><span data-i18n="brand_name">changqingnvshu</span> · <span data-i18n="nav_convert">语言转换</span></h1>
+      <p data-i18n="convert_hero_desc">输入汉字，查看对应的女书字符。女书字符与江永土话同音字一一对应，支持多音字多字符展示。</p>
+    </div>
+  </section>
+
+  <!-- Converter -->
+  <section class="converter-section">
+    <div class="container">
+      <div class="converter-card">
+        <div class="converter-tabs" id="converterTabs">
+          <button class="converter-tab active" data-tab="chinese" data-i18n="convert_tab_chinese">汉字转换</button>
+          <button class="converter-tab" data-tab="english" data-i18n="convert_tab_english">英语转换</button>
+          <button class="converter-tab" data-tab="french" data-i18n="convert_tab_french">法语转换</button>
+          <button class="converter-tab" data-tab="spanish" data-i18n="convert_tab_spanish">西语转换</button>
+        </div>
+
+        <!-- Chinese Tab -->
+        <div class="tab-content" id="tab-chinese">
+          <div class="input-group">
+            <label for="hanziInput" data-i18n="convert_label_hanzi">输入汉字</label>
+            <textarea
+              id="hanziInput"
+              rows="4"
+              data-i18n-placeholder="convert_placeholder_hanzi"
+              placeholder="请输入汉字，如：changqingnvshu 传承非遗"
+              spellcheck="false"
+            ></textarea>
+          </div>
+          <div class="converter-actions">
+            <button class="btn btn-primary" id="convertBtn" data-i18n="convert_btn_convert">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm3.5 9H10v1.5h1.5v1H10V13H8.5V9H10V7.5h1.5v1.5z"/></svg>
+              转换为女书
+            </button>
+            <button class="btn btn-outline" id="clearBtn" data-i18n="convert_btn_clear">清空</button>
+            <button class="btn btn-outline" id="randomBtn" data-i18n="convert_btn_random">随机示例</button>
+          </div>
+
+          <div class="result-box" id="resultBox">
+            <div class="result-label" data-i18n="convert_result_label">女书输出 · NUSHU OUTPUT</div>
+            <div class="nushu-output" id="nushuOutput">
+              <div class="empty-result" data-i18n="convert_empty_chinese">输入汉字后，点击「转换为女书」按钮即可看到结果</div>
+            </div>
+          </div>
+
+          <div id="charDetail" style="margin-top: 20px; display: none;">
+            <div class="result-box">
+              <div class="result-label" data-i18n="convert_detail_label">详细对照 · CHARACTER MAPPING</div>
+              <div id="detailContent" style="color: var(--text-light); font-size: 0.875rem; line-height: 2;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- English Tab -->
+        <div class="tab-content" id="tab-english" style="display: none;">
+          <div class="input-group">
+            <label for="engInput" data-i18n="convert_label_eng">Enter English text</label>
+            <textarea
+              id="engInput"
+              rows="4"
+              data-i18n-placeholder="convert_placeholder_eng"
+              placeholder="Enter English text, e.g. Nushu is a women's script"
+              spellcheck="false"
+            ></textarea>
+          </div>
+          <div class="converter-actions">
+            <button class="btn btn-primary" id="engConvertBtn" data-i18n="convert_btn_eng_convert">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 0a8 8 0 100 16A8 8 0 008 0zm3.5 9H10v1.5h1.5v1H10V13H8.5V9H10V7.5h1.5v1.5z"/></svg>
+              <span>翻译并转换</span>
+            </button>
+            <button class="btn btn-outline" id="engClearBtn" data-i18n="convert_btn_eng_clear"><span>清空</span></button>
+          </div>
+          <div class="result-box">
+            <div class="result-label" data-i18n="convert_chinese_translation">中文翻译</div>
+            <div id="engChinese" style="font-size: 1.1rem; color: var(--text); margin-bottom: 16px;"></div>
+            <div class="result-label" data-i18n="convert_result_label">女书输出 · NUSHU OUTPUT</div>
+            <div class="nushu-output" id="engNushuOutput">
+              <div class="empty-result" data-i18n="convert_empty_eng">Enter English text and click "Translate & Convert"</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- French Tab -->
+        <div class="tab-content" id="tab-french" style="display: none;">
+          <div class="input-group">
+            <label for="frInput" data-i18n="convert_label_fr">Entrez le texte français</label>
+            <textarea
+              id="frInput"
+              rows="4"
+              data-i18n-placeholder="convert_placeholder_fr"
+              placeholder="Entrez du texte français, ex: Nüshu est une écriture féminine"
+              spellcheck="false"
+            ></textarea>
+          </div>
+          <div class="converter-actions">
+            <button class="btn btn-primary" id="frConvertBtn" data-i18n="convert_btn_fr_convert"><span>翻译并转换</span></button>
+            <button class="btn btn-outline" id="frClearBtn" data-i18n="convert_btn_fr_clear"><span>清空</span></button>
+          </div>
+          <div class="result-box">
+            <div class="result-label" data-i18n="convert_chinese_translation">中文翻译</div>
+            <div id="frChinese" style="font-size: 1.1rem; color: var(--text); margin-bottom: 16px;"></div>
+            <div class="result-label" data-i18n="convert_result_label">女书输出 · NUSHU OUTPUT</div>
+            <div class="nushu-output" id="frNushuOutput">
+              <div class="empty-result" data-i18n="convert_empty_fr">Entrez du texte français et cliquez sur "Traduire et Convertir"</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spanish Tab -->
+        <div class="tab-content" id="tab-spanish" style="display: none;">
+          <div class="input-group">
+            <label for="esInput" data-i18n="convert_label_es">Introduzca texto en español</label>
+            <textarea
+              id="esInput"
+              rows="4"
+              data-i18n-placeholder="convert_placeholder_es"
+              placeholder="Introduzca texto en español, ej: Nüshu es una escritura femenina"
+              spellcheck="false"
+            ></textarea>
+          </div>
+          <div class="converter-actions">
+            <button class="btn btn-primary" id="esConvertBtn" data-i18n="convert_btn_es_convert"><span>翻译并转换</span></button>
+            <button class="btn btn-outline" id="esClearBtn" data-i18n="convert_btn_es_clear"><span>清空</span></button>
+          </div>
+          <div class="result-box">
+            <div class="result-label" data-i18n="convert_chinese_translation">中文翻译</div>
+            <div id="esChinese" style="font-size: 1.1rem; color: var(--text); margin-bottom: 16px;"></div>
+            <div class="result-label" data-i18n="convert_result_label">女书输出 · NUSHU OUTPUT</div>
+            <div class="nushu-output" id="esNushuOutput">
+              <div class="empty-result" data-i18n="convert_empty_es">Introduzca texto en español y haga clic en "Traducir y Convertir"</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Info Section -->
+  <section style="padding: 0 0 80px; background: white;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div style="padding: 24px; background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border);">
+          <div style="font-size: 2rem; color: var(--primary); margin-bottom: 12px;" class="nushu-char nushu-global">字</div>
+          <h3 style="font-size: 1rem; margin-bottom: 8px;" data-i18n="convert_info1_title">一音多字</h3>
+          <p style="font-size: 0.875rem; color: var(--text-light);" data-i18n="convert_info1_desc">女书396字符对应3500+汉字，同音字共用同一字符。</p>
+        </div>
+        <div style="padding: 24px; background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border);">
+          <div style="font-size: 2rem; color: var(--primary); margin-bottom: 12px;" class="nushu-char nushu-global">转</div>
+          <h3 style="font-size: 1rem; margin-bottom: 8px;" data-i18n="convert_info2_title">精确匹配</h3>
+          <p style="font-size: 0.875rem; color: var(--text-light);" data-i18n="convert_info2_desc">严格遵循江永土话发音规则，确保转换准确性。</p>
+        </div>
+        <div style="padding: 24px; background: var(--bg); border-radius: var(--radius); border: 1px solid var(--border);">
+          <div style="font-size: 2rem; color: var(--primary); margin-bottom: 12px;" class="nushu-char nushu-global">互</div>
+          <h3 style="font-size: 1rem; margin-bottom: 8px;" data-i18n="convert_info3_title">双向查阅</h3>
+          <p style="font-size: 0.875rem; color: var(--text-light);" data-i18n="convert_info3_desc">字符展览页面支持按汉字反向查询女书字符。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo"><img src="logo/51eb5cf89d91a5686490c070c5e32028.jpg" alt="changqingnvshu" data-i18n-alt="brand_name" class="logo-img"><span data-i18n="brand_name">changqingnvshu</span></a>
+        <p data-i18n="footer_desc">传承江永女书文化，让世界看见女性文字的独特魅力。</p>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_explore">探索</h4>
+        <ul>
+          <li><a href="convert.html" data-i18n="nav_convert">语言转换</a></li>
+          <li><a href="gallery.html" data-i18n="nav_gallery">字符展览</a></li>
+          <li><a href="courses.html" data-i18n="nav_courses">传承人课程</a></li>
+          <li><a href="practice.html" data-i18n="nav_practice">每日一练</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_about">关于</h4>
+        <ul><li><a href="index.html#about" data-i18n="footer_about_link">女书简介</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_contact">联系</h4>
+        <ul><li><a href="#" data-i18n="footer_coop_link">合作咨询</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom"><span data-i18n="footer_copyright">© 2026 常青女书 · NUSHU · 江永女书文化传播平台 · 仅供学习与文化传播使用</span></div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Add page-specific i18n translations
+    Object.assign(I18N.zh, {
+      convert_hero_tag: '核心功能',
+      convert_hero_desc: '输入汉字，查看对应的女书字符。女书字符与江永土话同音字一一对应，支持多音字多字符展示。',
+      convert_label_hanzi: '输入汉字',
+      convert_placeholder_hanzi: '请输入汉字，如：常青女书 传承非遗',
+      convert_btn_convert: '转换为女书', convert_btn_clear: '清空', convert_btn_random: '随机示例',
+      convert_result_label: '女书输出 · NUSHU OUTPUT',
+      convert_detail_label: '详细对照 · CHARACTER MAPPING',
+      convert_empty_chinese: '输入汉字后，点击「转换为女书」按钮即可看到结果',
+      convert_label_eng: '输入英文', convert_placeholder_eng: '输入英文文本，如：Nushu is a women\'s script',
+      convert_btn_eng_convert: '翻译并转换', convert_btn_eng_clear: '清空',
+      convert_chinese_translation: '中文翻译',
+      convert_empty_eng: '输入英文后，点击「翻译并转换」按钮即可看到结果',
+      convert_label_fr: '输入法文', convert_placeholder_fr: '输入法文文本，如：Nüshu est une écriture féminine',
+      convert_btn_fr_convert: '翻译并转换', convert_btn_fr_clear: '清空',
+      convert_empty_fr: '输入法文后，点击「翻译并转换」按钮即可看到结果',
+      convert_label_es: '输入西班牙文', convert_placeholder_es: '输入西班牙文文本，如：Nüshu es una escritura femenina',
+      convert_btn_es_convert: '翻译并转换', convert_btn_es_clear: '清空',
+      convert_empty_es: '输入西班牙文后，点击「翻译并转换」按钮即可看到结果',
+      convert_info1_title: '一音多字', convert_info1_desc: '女书396字符对应3500+汉字，同音字共用同一字符。',
+      convert_info2_title: '精确匹配', convert_info2_desc: '严格遵循江永土话发音规则，确保转换准确性。',
+      convert_info3_title: '双向查阅', convert_info3_desc: '字符展览页面支持按汉字反向查询女书字符。',
+      convert_tab_chinese: '汉字转换', convert_tab_english: '英语转换', convert_tab_french: '法语转换', convert_tab_spanish: '西语转换',
+    });
+    Object.assign(I18N.en, {
+      convert_hero_tag: 'Core Feature',
+      convert_hero_desc: 'Enter Chinese characters to see the corresponding Nüshu script. Each Nüshu character maps to pronunciation-equivalent Chinese characters in the Jiangyong dialect.',
+      convert_label_hanzi: 'Enter Chinese characters',
+      convert_placeholder_hanzi: 'Enter Chinese characters, e.g. changqingnvshu Nüshu heritage',
+      convert_btn_convert: 'Convert to Nüshu', convert_btn_clear: 'Clear', convert_btn_random: 'Random Example',
+      convert_result_label: 'Nüshu Output',
+      convert_detail_label: 'Character Mapping',
+      convert_empty_chinese: 'Enter Chinese characters and click "Convert to Nüshu" to see the result',
+      convert_label_eng: 'Enter English text', convert_placeholder_eng: 'Enter English text, e.g. Nushu is a women\'s script',
+      convert_btn_eng_convert: 'Translate & Convert', convert_btn_eng_clear: 'Clear',
+      convert_chinese_translation: 'Chinese Translation',
+      convert_empty_eng: 'Enter English text and click "Translate & Convert" to see the result',
+      convert_label_fr: 'Enter French text', convert_placeholder_fr: 'Enter French text, e.g. Nüshu est une écriture féminine',
+      convert_btn_fr_convert: 'Traduire et Convertir', convert_btn_fr_clear: 'Effacer',
+      convert_empty_fr: 'Entrez du texte français et cliquez sur "Traduire et Convertir" pour voir le résultat',
+      convert_label_es: 'Enter Spanish text', convert_placeholder_es: 'Enter Spanish text, e.g. Nüshu es una escritura femenina',
+      convert_btn_es_convert: 'Traducir y Convertir', convert_btn_es_clear: 'Borrar',
+      convert_empty_es: 'Introduzca texto en español y haga clic en "Traducir y Convertir" para ver el resultado',
+      convert_info1_title: 'One Sound, Multiple Characters', convert_info1_desc: '396 Nüshu characters map to 3,500+ Chinese characters. Homophones share the same character.',
+      convert_info2_title: 'Precise Matching', convert_info2_desc: 'Follows Jiangyong dialect pronunciation rules strictly for accurate conversion.',
+      convert_info3_title: 'Two-way Lookup', convert_info3_desc: 'Search Nüshu characters by Chinese on the Exhibition page.',
+      convert_tab_chinese: 'Chinese', convert_tab_english: 'English', convert_tab_french: 'French', convert_tab_spanish: 'Spanish',
+    });
+
+    Object.assign(I18N.nushu, {
+      convert_hero_tag: '𛊸𛆹𛊜𛊸𛆹𛊜',
+      convert_hero_desc: '𛊛𛇺𛊰。𛊸𛆹𛊜𛊸𛆹𛊜。',
+      convert_label_hanzi: '𛊛𛇺𛊰',
+      convert_placeholder_hanzi: '𛊛𛇺，𛊰 𛊛𛇺',
+      convert_btn_convert: '𛊛𛇺', convert_btn_clear: '𛊛𛇺', convert_btn_random: '𛊰𛊰𛊰',
+      convert_result_label: '𛊛𛇺𛊰 · NUSHU OUTPUT',
+      convert_detail_label: '𛊛𛇺𛊰',
+      convert_empty_chinese: '𛊛𛇺 𛊰 𛊛𛇺',
+      convert_label_eng: '𛊰𛊰𛊰', convert_placeholder_eng: '𛊰𛊰𛊰，𛊛𛇺 𛊰 𛊛𛇺',
+      convert_btn_eng_convert: '𛊛𛇺', convert_btn_eng_clear: '𛊛𛇺',
+      convert_chinese_translation: '𛊛𛇺𛊰',
+      convert_empty_eng: '𛊰𛊰𛊰 𛊰 𛊛𛇺',
+      convert_label_fr: '𛊰𛊰𛊰', convert_placeholder_fr: '𛊰𛊰𛊰',
+      convert_btn_fr_convert: '𛊛𛇺', convert_btn_fr_clear: '𛊛𛇺',
+      convert_empty_fr: '𛊰𛊰𛊰 𛊰 𛊛𛇺',
+      convert_label_es: '𛊰𛊰𛊰', convert_placeholder_es: '𛊰𛊰𛊰',
+      convert_btn_es_convert: '𛊛𛇺', convert_btn_es_clear: '𛊛𛇺',
+      convert_empty_es: '𛊰𛊰𛊰 𛊰 𛊛𛇺',
+      convert_info1_title: '𛊛𛇺𛊰', convert_info1_desc: '𛊸𛆹𛊜𛊸𛆹𛊜。',
+      convert_info2_title: '𛊛𛇺𛊰', convert_info2_desc: '𛊸𛆹𛊜𛊸𛆹𛊜。',
+      convert_info3_title: '𛊛𛇺𛊰', convert_info3_desc: '𛊸𛆹𛊜𛊸𛆹𛊜。',
+      convert_tab_chinese: '𛊰𛊰𛊰', convert_tab_english: '𛊰𛊰𛊰', convert_tab_french: '𛊰𛊰𛊰', convert_tab_spanish: '𛊰𛊰𛊰',
+    });
+
+    // Converter page i18n hook
+    function onLangChange(lang) {
+      const t = I18N[lang] || I18N.zh;
+
+      // Update placeholders
+      const inputs = [
+        ['hanziInput', 'convert_placeholder_hanzi'],
+        ['engInput', 'convert_placeholder_eng'],
+        ['frInput', 'convert_placeholder_fr'],
+        ['esInput', 'convert_placeholder_es'],
+      ];
+      inputs.forEach(([id, key]) => {
+        const el = document.getElementById(id);
+        if (el && t[key]) el.placeholder = t[key];
+      });
+
+      // Update empty result messages
+      document.querySelectorAll('.empty-result[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key]) el.textContent = t[key];
+      });
+
+      // Update button text (preserving SVG icons)
+      const updateBtnText = (id, key) => {
+        const btn = document.getElementById(id);
+        if (btn && t[key]) {
+          const svg = btn.querySelector('svg');
+          if (svg) {
+            btn.innerHTML = '';
+            btn.appendChild(svg);
+            btn.appendChild(document.createTextNode(' ' + t[key]));
+          } else {
+            btn.textContent = t[key];
+          }
+        }
+      };
+      updateBtnText('convertBtn', 'convert_btn_convert');
+      updateBtnText('clearBtn', 'convert_btn_clear');
+      updateBtnText('randomBtn', 'convert_btn_random');
+      updateBtnText('engConvertBtn', 'convert_btn_eng_convert');
+      updateBtnText('engClearBtn', 'convert_btn_eng_clear');
+      updateBtnText('frConvertBtn', 'convert_btn_fr_convert');
+      updateBtnText('frClearBtn', 'convert_btn_fr_clear');
+      updateBtnText('esConvertBtn', 'convert_btn_es_convert');
+      updateBtnText('esClearBtn', 'convert_btn_es_clear');
+    }
+
+    // Tabs
+    document.querySelectorAll('.converter-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        document.querySelectorAll('.converter-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.style.display = 'none');
+        tab.classList.add('active');
+        const content = document.getElementById('tab-' + tab.dataset.tab);
+        if (content) content.style.display = 'block';
+      });
+    });
+
+    // Sample sentences
+    const samples = {
+      'zh': ['changqingnvshu 传承非遗', '江永女书 世界唯一女性文字', '女性智慧 文字之美', '一笔一画 书写女性的声音', '千年传承 女书文化', '姐妹情深 女书传情'],
+      'en': ['Nushu cultural heritage', 'Women script of Jiangyong', 'Female wisdom and beauty', 'Ancient feminine script', 'Millennial cultural legacy', 'Sisters and script'],
+      'nushu': ['𛆁𛉶𛊭𛆱𛊸𛆹', '𛊨𛆧𛆁𛇉𛆚', '𛆁𛊝𛉠𛅺𛆱', '𛊻𛆥𛊝𛉠𛅺']
+    };
+
+    document.getElementById('randomBtn').addEventListener('click', () => {
+      const input = document.getElementById('hanziInput');
+      const lang = currentLang;
+      const list = samples[lang] || samples.zh;
+      input.value = list[Math.floor(Math.random() * list.length)];
+    });
+
+    // Convert Chinese
+    document.getElementById('convertBtn').addEventListener('click', () => {
+      const text = document.getElementById('hanziInput').value.trim();
+      if (!text) return;
+      const results = textToNushu(text);
+      const output = document.getElementById('nushuOutput');
+      output.innerHTML = renderNushuOutput(results);
+
+      const detail = document.getElementById('charDetail');
+      const detailContent = document.getElementById('detailContent');
+      const mapped = results.filter(r => r.found);
+      if (mapped.length > 0) {
+        detail.style.display = 'block';
+        detailContent.innerHTML = mapped.map(r =>
+          `<span style="display:inline-block;padding:2px 8px;background:var(--accent);border-radius:4px;margin:2px;"><span class="nushu-char nushu-global">${r.char}</span> → <span class="nushu-char nushu-global">${r.nushu.join(' / ')}</span></span>`
+        ).join('');
+      } else {
+        detail.style.display = 'none';
+      }
+    });
+
+    document.getElementById('clearBtn').addEventListener('click', () => {
+      document.getElementById('hanziInput').value = '';
+      const nushuOut = document.getElementById('nushuOutput');
+      nushuOut.innerHTML = `<div class="empty-result" data-i18n="convert_empty_chinese">${I18N[currentLang]?.convert_empty_chinese || '输入汉字后，点击「转换为女书」按钮即可看到结果'}</div>`;
+      document.getElementById('charDetail').style.display = 'none';
+    });
+
+    // Translation dictionaries
+    const ENGLISH_MAP = {
+      'nushu': '女书', 'women': '女人', 'woman': '女性', 'script': '文字', 'language': '语言',
+      'heritage': '遗产', 'culture': '文化', 'beautiful': '美丽', 'unique': '独特',
+      'world': '世界', 'ancient': '古代', 'traditional': '传统', 'writing': '书写',
+      'history': '历史', 'life': '生活', 'wisdom': '智慧', 'sister': '姐妹',
+      'peace': '和平', 'happiness': '幸福', 'hope': '希望', 'dream': '梦想',
+      'love': '爱', 'knowledge': '知识', 'learn': '学习', 'read': '阅读',
+      'japanese': '日本', 'china': '中国', 'chinese': '中国', 'book': '书',
+      'letter': '信', 'song': '歌', 'dance': '舞', 'art': '艺术',
+    };
+    const FRENCH_MAP = {
+      'nushu': '女书', 'femme': '女人', 'femmes': '女性', 'écriture': '文字',
+      'écrit': '书写', 'culture': '文化', 'beau': '美丽', 'belle': '美好',
+      'monde': '世界', 'ancien': '古代', 'traditionnel': '传统', 'histoire': '历史',
+      'vie': '生活', 'sagesse': '智慧', 'soeur': '姐妹', 'amour': '爱',
+      'espoir': '希望', 'bonheur': '幸福', 'rêve': '梦想', 'liberté': '自由',
+      'famille': '家庭', 'poésie': '诗', 'musique': '音乐', 'danse': '舞',
+    };
+    const SPANISH_MAP = {
+      'nushu': '女书', 'mujer': '女人', 'mujeres': '女性', 'escritura': '文字',
+      'escribir': '书写', 'cultura': '文化', 'hermosa': '美丽', 'hermoso': '美好',
+      'mundo': '世界', 'antiguo': '古代', 'tradicional': '传统', 'historia': '历史',
+      'vida': '生活', 'sabiduria': '智慧', 'hermana': '姐妹', 'amor': '爱',
+      'esperanza': '希望', 'felicidad': '幸福', 'sueño': '梦想', 'familia': '家庭',
+      'poesía': '诗', 'música': '音乐', 'danza': '舞', 'libertad': '自由',
+    };
+
+    function translateWord(text, dict) {
+      let result = text;
+      Object.keys(dict).sort((a, b) => b.length - a.length).forEach(word => {
+        result = result.replace(new RegExp('\\b' + word + '\\b', 'gi'), dict[word]);
+      });
+      return result;
+    }
+
+    document.getElementById('engConvertBtn').addEventListener('click', () => {
+      const eng = document.getElementById('engInput').value.trim();
+      if (!eng) return;
+      const chinese = translateWord(eng, ENGLISH_MAP);
+      document.getElementById('engChinese').textContent = chinese;
+      const results = textToNushu(chinese);
+      document.getElementById('engNushuOutput').innerHTML = renderNushuOutput(results);
+    });
+    document.getElementById('engClearBtn').addEventListener('click', () => {
+      document.getElementById('engInput').value = '';
+      document.getElementById('engChinese').textContent = '';
+      document.getElementById('engNushuOutput').innerHTML = `<div class="empty-result" data-i18n="convert_empty_eng">${I18N[currentLang]?.convert_empty_eng || 'Enter English text and click "Translate & Convert"'}</div>`;
+    });
+
+    document.getElementById('frConvertBtn').addEventListener('click', () => {
+      const fr = document.getElementById('frInput').value.trim();
+      if (!fr) return;
+      const chinese = translateWord(fr, FRENCH_MAP);
+      document.getElementById('frChinese').textContent = chinese;
+      const results = textToNushu(chinese);
+      document.getElementById('frNushuOutput').innerHTML = renderNushuOutput(results);
+    });
+    document.getElementById('frClearBtn').addEventListener('click', () => {
+      document.getElementById('frInput').value = '';
+      document.getElementById('frChinese').textContent = '';
+      document.getElementById('frNushuOutput').innerHTML = `<div class="empty-result" data-i18n="convert_empty_fr">${I18N[currentLang]?.convert_empty_fr || 'Entrez du texte français et cliquez sur "Traduire et Convertir"'}</div>`;
+    });
+
+    document.getElementById('esConvertBtn').addEventListener('click', () => {
+      const es = document.getElementById('esInput').value.trim();
+      if (!es) return;
+      const chinese = translateWord(es, SPANISH_MAP);
+      document.getElementById('esChinese').textContent = chinese;
+      const results = textToNushu(chinese);
+      document.getElementById('esNushuOutput').innerHTML = renderNushuOutput(results);
+    });
+    document.getElementById('esClearBtn').addEventListener('click', () => {
+      document.getElementById('esInput').value = '';
+      document.getElementById('esChinese').textContent = '';
+      document.getElementById('esNushuOutput').innerHTML = `<div class="empty-result" data-i18n="convert_empty_es">${I18N[currentLang]?.convert_empty_es || 'Introduzca texto en español y haga clic en "Traducir y Convertir"'}</div>`;
+    });
+  </script>
+</body>
+</html>
